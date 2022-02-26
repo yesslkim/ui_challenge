@@ -1,15 +1,18 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import Header from 'base/Header';
+import Wrapper from 'base/Wrapper';
+import Home from 'base/Home';
+import Routes from 'base/Router';
+import 'App.css';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">dddd</header>
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="components" element={<Components />}>
-          <Route path=":componentsId" element={<Component />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes> */}
+      <Wrapper>
+        <>
+          <Header />
+          <Routes />
+        </>
+      </Wrapper>
     </div>
   );
 }

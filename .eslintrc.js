@@ -2,7 +2,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
+    'prettier',
     'plugin:prettier/recommended',
   ],
   parserOptions: {
@@ -13,7 +13,7 @@ module.exports = {
     },
   },
   rules: {
-    //.prettierrc.js 파일에서 설정
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
   settings: {
     react: {
