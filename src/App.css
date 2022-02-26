@@ -1,0 +1,123 @@
+/* RESET CSS */
+:root {
+  --main-color: #1864ff;
+  --secondary-color: #edf1fa;
+  --dark-color: #04052f;
+  --white-color: #fff;
+}
+
+@font-face {
+  font-family: 'SUIT-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SUIT-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+header,
+div {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'SUIT-Bold';
+}
+
+p,
+a,
+ul,
+li,
+button {
+  font-family: 'SUIT-Medium';
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+a:active {
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+/* BASE : COMPONENT */
+.wrap {
+  padding: 20px;
+}
+
+/* BASE : HOME */
+.notice li {
+  margin-bottom: 5px;
+}
+
+/* BASE : COMPONENTS */
+/* BASE : COMPONENT NOTFOUND */
+.component-notfound .ground {
+  width: 200px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.component-notfound .ground::before {
+  display: block;
+  content: '🚕';
+  font-size: 40px;
+  transform: rotate(90deg);
+  animation: going 4s linear infinite;
+}
+
+.component-notfound .ground::after {
+  display: block;
+  width: 200px;
+  height: 4px;
+  background-color: brown;
+  content: '';
+}
+
+@keyframes going {
+  from {
+    transform: translateX(200px);
+  }
+  to {
+    transform: translateX(-80px);
+  }
+}
+/* BASE : PAGINATION */
+.pagination a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 6px;
+  margin-right: 10px;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+.pagination a:hover {
+  box-shadow: 0 2px 10px -6px hsla(222, calc(89 * 1%), 60%, 0.55);
+}
