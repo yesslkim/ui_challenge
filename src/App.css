@@ -4,6 +4,7 @@
   --secondary-color: #edf1fa;
   --dark-color: #04052f;
   --white-color: #fff;
+  --border-main: 0 solid #e2e8f0;
 }
 
 @font-face {
@@ -39,7 +40,8 @@ p,
 a,
 ul,
 li,
-button {
+button,
+code {
   font-family: 'SUIT-Medium';
   line-height: 1.4;
 }
@@ -70,6 +72,10 @@ button {
 }
 
 /* BASE : COMPONENTS */
+.components section {
+  margin: 20px 0;
+}
+
 /* BASE : COMPONENT NOTFOUND */
 .component-notfound .ground {
   width: 200px;
@@ -120,4 +126,143 @@ button {
 
 .pagination a:hover {
   box-shadow: 0 2px 10px -6px hsla(222, calc(89 * 1%), 60%, 0.55);
+}
+
+/* BASE : CODE EDITOR */
+.code-editor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  border: var(--border-main);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 5%);
+  overflow: hidden;
+}
+
+.editor-header {
+  line-height: 1.5;
+  border-width: 0;
+  border-style: solid;
+  background-color: var(--white-color);
+  border-color: #edf2f7;
+  border-bottom-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.editor-btns {
+  line-height: 1.5;
+  border: var(--border-main);
+  display: flex;
+  align-items: center;
+}
+
+.editor-btns > div {
+  height: 0.75rem;
+  width: 0.75rem;
+  border: var(--border-main);
+  background-color: #f56565;
+  border-radius: 50%;
+  line-height: 1.5;
+}
+
+.editor-btns .red {
+  background-color: #f56565;
+  border-radius: 50%;
+}
+
+.editor-btns .yellow {
+  background-color: #f6e05e;
+  margin-left: 0.5rem;
+}
+
+.editor-btns .green {
+  background-color: #48bb78;
+  margin-left: 0.5rem;
+}
+
+/* .editor-copy {
+  line-height: 1.5;
+  border: var(--border-main);
+}
+
+.editor-copy .copy {
+  line-height: 1.5;
+  fill: none;
+  border: var(--border-main);
+  display: block;
+  cursor: pointer;
+  height: 1.5rem;
+  stroke: currentColor;
+  color: #e2e8f0;
+  width: 1.5rem;
+  transition: color 300ms ease-in-out;
+}
+
+.editor-copy .copy:hover {
+  color: #a0aec0;
+} */
+
+.editor-menu {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.5;
+  border: var(--border-main);
+  border-bottom-width: 1px;
+  background-color: var(--white-color);
+}
+
+.editor-menu > button {
+  border: 0 solid #667eea;
+  font-family: inherit;
+  margin: 0;
+  overflow: visible;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: inherit;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #4a5568;
+  letter-spacing: 0.025em;
+}
+
+.editor-menu > button.active {
+  border-top-width: 2px;
+}
+
+.editor-code {
+  border: var(--border-main);
+  overflow-y: scroll;
+  height: 320px;
+}
+
+.content {
+  border: var(--border-main);
+}
+
+.content > pre {
+  line-height: 1.5;
+  border: var(--border-main);
+  margin: 0;
+  display: none;
+  overflow-x: auto;
+  color: #333;
+  background: #f8f8f8;
+  font-size: 14px;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.content > pre.active {
+  display: block;
 }
