@@ -88,6 +88,37 @@ const Accordion = () => {
 
   return (
     <>
+      <section className="component-info">
+        <dl>
+          <div>
+            <dt>
+              <span aria-hidden="true" className="ico">
+                📅
+              </span>
+              Date
+            </dt>
+            <dd>22.02.27</dd>
+          </div>
+          <div>
+            <dt>
+              <span aria-hidden="true" className="ico">
+                📦
+              </span>
+              제목
+            </dt>
+            <dd>아코디언 컴포넌트</dd>
+          </div>
+          <div>
+            <dt>
+              <span aria-hidden="true" className="ico">
+                📍
+              </span>
+              참고
+            </dt>
+            <dd>밀리의 서재, 자주묻는질문을 참고하였습니다😘</dd>
+          </div>
+        </dl>
+      </section>
       <section className="component">
         <div className={isActive ? 'accordion active' : 'accordion'}>
           <button
@@ -107,9 +138,6 @@ const Accordion = () => {
             해결이 어려운 경우 고객센터로 문의해 주세요.
           </p>
         </div>
-        <p className="reference">
-          📍 참고 : 밀리의 서재, 자주묻는질문을 참고하였습니다😘
-        </p>
       </section>
       <section>{code}</section>
       <Pagination />

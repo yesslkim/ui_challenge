@@ -26,7 +26,10 @@
 header,
 div,
 section,
-p {
+p,
+dl,
+dt,
+dd {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -43,7 +46,10 @@ a,
 ul,
 li,
 button,
-code {
+code,
+dl,
+dt,
+dd {
   font-family: 'SUIT-Medium';
   line-height: 1.4;
 }
@@ -132,15 +138,28 @@ img {
   margin: 30px 0;
 }
 
+.component-info div {
+  display: flex;
+}
+
+.component-info dt {
+  width: 71px;
+  font-weight: 800;
+  margin-right: 20px;
+}
+
+.component-info .ico {
+  display: inline-flex;
+  justify-content: center;
+  width: 30px;
+  padding-right: 5px;
+}
+
 .components .component {
   max-width: 800px;
   padding: 20px;
   border-radius: 5px;
-  background-color: #f4f4f4;
-}
-
-.components .reference {
-  padding: 20px 20px 0;
+  background-color: var(--secondary-color);
 }
 
 /* BASE : COMPONENT NOTFOUND */
