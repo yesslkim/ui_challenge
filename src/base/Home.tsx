@@ -1,6 +1,19 @@
 import { NavLink } from 'react-router-dom';
 
 const Home = () => {
+  const handleMouseEnter = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    const target = e.target as HTMLAnchorElement;
+    target.closest('li')?.classList.add('active');
+  };
+
+  const handleMouseLeave = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    const target = e.target as HTMLAnchorElement;
+    target.closest('li')?.classList.remove('active');
+  };
   return (
     <main className="main">
       <div className="notice">
@@ -28,7 +41,14 @@ const Home = () => {
         <h2>Components</h2>
         <ul>
           <li>
-            <NavLink to="/components/1">컴포넌트1</NavLink>
+            <img src="assets/images/accordion.png" alt="" />
+            <NavLink
+              to="/components/1"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              Day 1: 아코디언
+            </NavLink>
           </li>
         </ul>
       </div>

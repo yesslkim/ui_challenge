@@ -1,7 +1,7 @@
 import Header from 'base/Header';
 import Wrapper from 'base/Wrapper';
-import Home from 'base/Home';
 import Routes from 'base/Router';
+import 'icons.css';
 import 'App.css';
 import Footer from 'base/Footer';
 

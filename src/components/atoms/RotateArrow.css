@@ -1,0 +1,8 @@
+.ic-chevron-right::before {
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+.ic-chevron-right.active::before {
+  transform: rotate(-90deg);
+}

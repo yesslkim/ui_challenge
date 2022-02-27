@@ -24,7 +24,9 @@
 }
 
 header,
-div {
+div,
+section,
+p {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -61,19 +63,84 @@ button {
   cursor: pointer;
 }
 
+img {
+  display: block;
+}
+
 /* BASE : COMPONENT */
 .wrap {
   padding: 20px;
 }
 
 /* BASE : HOME */
+
 .notice li {
   margin-bottom: 5px;
 }
 
+.components-list {
+  min-height: 500px;
+}
+
+.components-list ul,
+.components-list li {
+  list-style-type: none;
+}
+
+.components-list li {
+  position: relative;
+}
+
+.components-list img {
+  display: none;
+  position: absolute;
+  bottom: 1px;
+  left: 122px;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.components-list li.active img {
+  display: block;
+  animation: swing 1s linear infinite;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.components-list a {
+  transition: color font-weight 400ms ease-in-out;
+}
+
+.components-list a:hover {
+  color: var(--main-color);
+  font-weight: 800;
+}
+
 /* BASE : COMPONENTS */
 .components section {
-  margin: 20px 0;
+  margin: 30px 0;
+}
+
+.components .component {
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+
+.components .reference {
+  padding: 20px 20px 0;
 }
 
 /* BASE : COMPONENT NOTFOUND */
@@ -107,7 +174,12 @@ button {
     transform: translateX(-80px);
   }
 }
+
 /* BASE : PAGINATION */
+.pagination {
+  margin: 20px 0;
+}
+
 .pagination a {
   display: inline-flex;
   justify-content: center;
@@ -238,6 +310,7 @@ button {
 
 .editor-menu > button.active {
   border-top-width: 2px;
+  font-weight: 800;
 }
 
 .editor-code {
@@ -250,7 +323,7 @@ button {
   border: var(--border-main);
 }
 
-.content > pre {
+.content div {
   line-height: 1.5;
   border: var(--border-main);
   margin: 0;
@@ -259,10 +332,9 @@ button {
   color: #333;
   background: #f8f8f8;
   font-size: 14px;
-  min-height: 100vh;
   padding: 1.5rem;
 }
 
-.content > pre.active {
+.content div.active {
   display: block;
 }

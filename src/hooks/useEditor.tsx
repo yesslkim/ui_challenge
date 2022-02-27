@@ -1,8 +1,15 @@
 import { useState } from 'react';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+import css from 'react-syntax-highlighter/dist/esm/languages/prism/css';
+import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
+
+SyntaxHighlighter.registerLanguage('jsx', jsx);
+SyntaxHighlighter.registerLanguage('css', css);
 
 type useEditorProps = {
-  reactCode: JSX.Element;
-  cssCode: JSX.Element;
+  reactCode: string;
+  cssCode: string;
 };
 
 const useEditor = ({ reactCode, cssCode }: useEditorProps) => {
@@ -55,14 +62,48 @@ const useEditor = ({ reactCode, cssCode }: useEditorProps) => {
       </div>
       <div className="editor-code">
         <div className="content react">
-          <pre className={isReactCodeActive ? 'active' : ''}>
-            <code className="react-code">{reactCode}</code>
-          </pre>
+          <div className={isReactCodeActive ? 'active' : ''}>
+            <SyntaxHighlighter
+              language="javascript"
+              style={prism}
+              showLineNumbers={true}
+              customStyle={{
+                background: '#f8f8f8',
+                textShadow: 'none',
+                margin: '0',
+                padding: '0',
+              }}
+              codeTagProps={{
+                style: {
+                  textShadow: 'none',
+                },
+              }}
+            >
+              {reactCode}
+            </SyntaxHighlighter>
+          </div>
         </div>
         <div className="content css">
-          <pre className={!isReactCodeActive ? 'active' : ''}>
-            <code className="css-code">{cssCode}</code>
-          </pre>
+          <div className={!isReactCodeActive ? 'active' : ''}>
+            <SyntaxHighlighter
+              language="css"
+              style={prism}
+              showLineNumbers={true}
+              customStyle={{
+                background: '#f8f8f8',
+                textShadow: 'none',
+                margin: '0',
+                padding: '0',
+              }}
+              codeTagProps={{
+                style: {
+                  textShadow: 'none',
+                },
+              }}
+            >
+              {cssCode}
+            </SyntaxHighlighter>
+          </div>
         </div>
       </div>
     </div>
